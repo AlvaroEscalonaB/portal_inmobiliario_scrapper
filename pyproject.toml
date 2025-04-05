@@ -4,6 +4,31 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "scrapy>=2.12.0",
+dependencies = ["pandas>=2.2.3", "rich>=14.0.0", "scrapy>=2.12.0"]
+
+[dependency-groups]
+dev = ["isort>=6.0.1", "ruff>=0.11.4", "vulture>=2.14"]
+
+[tool.ruff]
+line-length = 120
+select = [
+  "E",   # PEP 8 style guide for Python
+  "F",   # Pyflakes (logical errors, unused variables, imports)
+  "W",   # Warnings (general best practices)
+  "C",   # McCabe complexity (limits function complexity)
+  "N",   # Naming conventions (e.g., snake_case)
+  "B",   # Bugbear (common bug risks and anti-patterns)
+  "A",   # Type annotations (enforces type hinting)
+  "I",   # Import-related rules (isort, sorting/import grouping)
+  "PL",  # Pylint-like rules (naming, docstring, etc.)
+  "RUF", # Ruff-specific enhancements and optimizations
+  "TID", # Tidiness rules (trailing spaces, commented code)
+  "UP",  # Python upgrade rules (modernization, f-strings)
 ]
+ignore = [
+  "E501", # Ignore line-length rule (E501)
+]
+
+[tool.isort]
+profile = "black"
+line_length = 120

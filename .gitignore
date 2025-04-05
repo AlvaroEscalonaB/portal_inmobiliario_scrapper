@@ -1,1 +1,7 @@
 .venv/
+__pycache__/
+
+# Crawled data and persistence layer
+db/*.sqlite3
+outputs/*.json
+output.json
